@@ -88,7 +88,10 @@ Open your browser at:
 ```
 Then in CloudFront, create a cache invalidation for:
 
-`   CopyEdit/*   `
+```
+`/*'
+```
+
 🌐 4. Access URLs
 -----------------
 
