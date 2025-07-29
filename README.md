@@ -45,7 +45,12 @@ Edit
 
 ### 1. Clone & Install
 
-
+```
+bash
+git clone https://github.com/<your-username>/<repo>.git
+cd aws-serverless-app/frontend
+npm install
+```
 
 -----------------------
 
@@ -53,35 +58,37 @@ Edit
 
 Copy .env.example to .env:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditcp .env.example .env   `
-
+```
+`cp .env.example .env   `
+```
 Then edit .env and add:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopyEditVITE_API_URL=https://.execute-api..amazonaws.com   `
-
+```
+`VITE_API_URL=https://.execute-api..amazonaws.com   `
+```
 ### 2.2 Run Dev Server
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditnpm run dev   `
-
+```
+`npm run dev   `
+```
 Open your browser at:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   arduinoCopyEdithttp://localhost:5173   `
-
+```
+`   arduinoCopyEdithttp://localhost:5173   `
+```
 🚀 3. Production Deploy
 -----------------------
 
 ### 3.1 Build the App
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditcd frontend  npm run build   `
+``` `   bashCopyEditcd frontend  npm run build   ` ```
 
 ### 3.2 Upload to S3
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditaws s3 sync dist/ s3:// --delete   `
-
+```
+`   bashCopyEditaws s3 sync dist/ s3:// --delete   `
+```
 Then in CloudFront, create a cache invalidation for:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   CopyEdit/*   `
-
+`   CopyEdit/*   `
 🌐 4. Access URLs
 -----------------
 
@@ -98,4 +105,4 @@ Feel free to open issues or PRs to improve styling, add features, or fix bugs.
 📜 License
 ----------
 
-This project is licensed under the MIT License.
+This project is licensed under the `MIT` License.
