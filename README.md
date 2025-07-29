@@ -50,57 +50,55 @@ git clone https://github.com/<your-username>/<repo>.git
 cd aws-serverless-app/frontend
 npm install
 
----
-## 🧪 2. Local Development
+-----------------------
 
 ### 2.1 Set Up Environment
 
-Copy `.env.example` to `.env`:
+Copy .env.example to .env:
 
-```bash
-cp .env.example .env
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditcp .env.example .env   `
 
-VITE_API_URL=https://<your-api-id>.execute-api.<region>.amazonaws.com
+Then edit .env and add:
 
----
-#2.Run the dev server:
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopyEditVITE_API_URL=https://.execute-api..amazonaws.com   `
 
-```bash
+### 2.2 Run Dev Server
 
-npm run dev
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditnpm run dev   `
 
----
-#3.Open: http://localhost:5173
+Open your browser at:
 
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   arduinoCopyEdithttp://localhost:5173   `
 
----
-###3. Production Deploy
+🚀 3. Production Deploy
+-----------------------
 
+### 3.1 Build the App
 
-```bash
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditcd frontend  npm run build   `
 
-cd frontend
-npm run build
-aws s3 sync dist/ s3://<your-s3-bucket> --delete
+### 3.2 Upload to S3
 
----
-#Then in the CloudFront console create an invalidation for /*.
----
-###4. Access
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditaws s3 sync dist/ s3:// --delete   `
 
+Then in CloudFront, create a cache invalidation for:
 
-##Dev: http://localhost:5173
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   CopyEdit/*   `
 
-##Prod: https://<your-cloudfront-domain> (or your custom domain)
+🌐 4. Access URLs
+-----------------
 
-###🤝 Contributing
+*   **Dev:** [http://localhost:5173](http://localhost:5173)
+    
+*   **Prod:** https:// (or your custom domain)
+    
+
+🤝 Contributing
+---------------
+
 Feel free to open issues or PRs to improve styling, add features, or fix bugs.
 
-###📜 License
-#This project is licensed under the MIT License.
+📜 License
+----------
 
-```pgsql
-
-
----
-
+This project is licensed under the MIT License.
