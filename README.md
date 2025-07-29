@@ -49,40 +49,40 @@ Edit
 git clone https://github.com/<your-username>/<repo>.git
 cd aws-serverless-app/frontend
 npm install
-2. Local Development
-Copy .env.example → .env in /frontend, then set:
+###2. Local Development
+#Copy .env.example → .env in /frontend, then set:
 
 ini
 Copy
 Edit
 VITE_API_URL=https://<your-api-id>.execute-api.<region>.amazonaws.com
-Run the dev server:
+#Run the dev server:
 
 bash
 Copy
 Edit
 npm run dev
-Open: http://localhost:5173
+#Open: http://localhost:5173
 
-3. Production Deploy
+###3. Production Deploy
 bash
 Copy
 Edit
 cd frontend
 npm run build
 aws s3 sync dist/ s3://<your-s3-bucket> --delete
-Then in the CloudFront console create an invalidation for /*.
+#Then in the CloudFront console create an invalidation for /*.
 
-4. Access
-Dev: http://localhost:5173
+###4. Access
+##Dev: http://localhost:5173
 
-Prod: https://<your-cloudfront-domain> (or your custom domain)
+##Prod: https://<your-cloudfront-domain> (or your custom domain)
 
-🤝 Contributing
+###🤝 Contributing
 Feel free to open issues or PRs to improve styling, add features, or fix bugs.
 
-📜 License
-This project is licensed under the MIT License.
+###📜 License
+#This project is licensed under the MIT License.
 
 pgsql
 Copy
