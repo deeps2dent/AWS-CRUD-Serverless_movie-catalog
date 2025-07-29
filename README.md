@@ -72,19 +72,19 @@ Then edit .env and add:
 Open your browser at:
 
 ```
-`   arduinoCopyEdithttp://localhost:5173   `
+`   http://localhost:5173   `
 ```
 🚀 3. Production Deploy
 -----------------------
 
 ### 3.1 Build the App
 
-``` `   bashCopyEditcd frontend  npm run build   ` ```
+``` `   frontend  npm run build   ` ```
 
 ### 3.2 Upload to S3
 
 ```
-`   bashCopyEditaws s3 sync dist/ s3:// --delete   `
+`  s3 sync dist/ s3:// --delete   `
 ```
 Then in CloudFront, create a cache invalidation for:
 
