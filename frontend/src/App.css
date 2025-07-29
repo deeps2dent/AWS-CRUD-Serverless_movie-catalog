@@ -1,0 +1,121 @@
+/* src/App.css */
+
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  color: #ffcc00;
+}
+.navbar .links a,
+.navbar .links .nav-button {
+  margin-left: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.navbar .links a:hover,
+.navbar .links .nav-button:hover {
+  color: #ffd633;
+}
+
+/* Container padding */
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Grid: max two columns, centered */
+.coffee-list {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.coffee-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 300px;
+  cursor: pointer;
+}
+.coffee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+.coffee-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Form styling */
+.add-coffee-form {
+  max-width: 400px;
+  margin: 1.5rem auto;
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 8px;
+}
+.styled-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ffcc00;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Inline checkbox label */
+.styled-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+button {
+  background: #ffcc00;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+button:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+/* Spacing between multiple buttons */
+button + button {
+  margin-left: 0.5rem;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
