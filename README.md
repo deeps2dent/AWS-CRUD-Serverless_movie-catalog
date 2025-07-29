@@ -49,31 +49,44 @@ Edit
 git clone https://github.com/<your-username>/<repo>.git
 cd aws-serverless-app/frontend
 npm install
+
+---
 ###2. Local Development
-#Copy .env.example → .env in /frontend, then set:
+#1.Copy .env.example → .env in /frontend, then set:
 
+
+```bash
 ini
-Copy
-Edit
+
 VITE_API_URL=https://<your-api-id>.execute-api.<region>.amazonaws.com
-#Run the dev server:
 
-bash
-Copy
-Edit
+---
+#2.Run the dev server:
+
+```bash
+
 npm run dev
-#Open: http://localhost:5173
 
+---
+#3.Open: http://localhost:5173
+
+
+---
 ###3. Production Deploy
-bash
-Copy
-Edit
+
+
+```bash
+
 cd frontend
 npm run build
 aws s3 sync dist/ s3://<your-s3-bucket> --delete
-#Then in the CloudFront console create an invalidation for /*.
 
+---
+#Then in the CloudFront console create an invalidation for /*.
+---
 ###4. Access
+
+
 ##Dev: http://localhost:5173
 
 ##Prod: https://<your-cloudfront-domain> (or your custom domain)
@@ -84,18 +97,8 @@ Feel free to open issues or PRs to improve styling, add features, or fix bugs.
 ###📜 License
 #This project is licensed under the MIT License.
 
-pgsql
-Copy
-Edit
+```pgsql
+
 
 ---
 
-## 2. Commit via GitHub Web UI
-
-1. In your repository on GitHub, click on the **README.md** file in the file list (if it exists), or click **Add file → Create new file**, and name it `README.md`.
-2. Click the **pencil icon** (✏️) or just start typing in the editor.
-3. **Paste** the content from above.
-4. Scroll down to **“Commit new file”** (or “Commit changes”):
-   - **Commit message:** `Add project README`
-   - Choose **Commit directly to the main branch**.
-5. Click **Commit new file**.
