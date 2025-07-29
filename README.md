@@ -51,12 +51,14 @@ cd aws-serverless-app/frontend
 npm install
 
 ---
-###2. Local Development
-#1.Copy .env.example → .env in /frontend, then set:
+## 🧪 2. Local Development
 
+### 2.1 Set Up Environment
+
+Copy `.env.example` to `.env`:
 
 ```bash
-ini
+cp .env.example .env
 
 VITE_API_URL=https://<your-api-id>.execute-api.<region>.amazonaws.com
 
