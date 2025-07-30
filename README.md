@@ -125,7 +125,7 @@ https://www.free-project.online
 ## 🌍 API Endpoints
 | Route                        | Method | Description      |
 | ---------------------------- | ------ | ---------------- |
-| `/coffee` (renamed `/movie`) | GET    | List all movies  |
+| `/movie`                     | GET    | List all movies  |
 | `/movie/:id`                 | GET    | Get single movie |
 | `/movie`                     | POST   | Add new movie    |
 | `/movie/:id`                 | PUT    | Update movie     |
