@@ -46,9 +46,28 @@ Adapted from the popular AWS Coffee Shop CRUD tutorial, reimagined with a new do
 ---
 
 ## 🗂️ Project Structure
-
-`architecture.png`
-
+```
+aws-serverless-app/
+   -frontend/
+        -src/
+             -NavBar.jsx
+             -App.jsx
+             -AddMovieForm.jsx
+             -ItemDetails.jsx
+             -utils/apis.js
+        -App.css
+        -index.css
+        -main.jsx
+   -LambdaWithLayer/
+        -nodejs/utils.mjs
+    -lambda/
+            -get.js
+            -post.js
+            -update.js
+            -delete.js
+    -.gitignore
+    -README.md
+```
 
 ---
 
