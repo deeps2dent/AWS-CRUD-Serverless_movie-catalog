@@ -140,9 +140,3 @@ React → CloudFront/S3 → API Gateway (Cognito Auth) → Lambda (w/ Layer) →
 ```
 All serverless, scalable, and cost-effective.
 
-### 🙌 Credits & Inspiration
-Based on TrickSumo's AWS CRUD Serverless Tutorial, extended and restyled for a fresh movie catalog use case.
-
-### 📜 License
-This project is licensed under the MIT License.
-
