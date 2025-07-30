@@ -1,43 +1,54 @@
-# 🎬 Movie Catalog CRUD App
+# 🎬 Movie Catalog CRUD App — AWS Serverless
 
-A serverless React single-page app that lets authenticated users browse, add, edit and delete **movies**.  
-Built with AWS Lambda + API Gateway + DynamoDB (shared layer), secured by Amazon Cognito, and hosted on S3+CloudFront.
+A modern, fully serverless Movie Catalog web app where users can securely sign in, browse, add, edit, and delete movie records.  
+Adapted from the popular AWS Coffee Shop CRUD tutorial, reimagined with a new domain, improved styling, and a completely new dataset (movies, not coffee).
 
----
-
-## 🔍 Features
-
-- **Authentication** via Amazon Cognito (OIDC)  
-- **CRUD API** implemented as Node.js Lambdas behind API Gateway  
-- **DynamoDB** for persistent storage (wrapped in a Lambda Layer)  
-- **React Frontend** with React Router, custom CSS  
-- **Global Hosting**: S3 + CloudFront + custom domain + HTTPS  
+**🌐 Live Demo:** [https://www.free-project.online](https://www.free-project.online)
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Architecture
 
-aws-serverless-app/
-├── frontend/ # React SPA
-│ ├── src/
-│ │ ├── NavBar.jsx
-│ │ ├── App.jsx
-│ │ ├── AddMovieForm.jsx
-│ │ ├── ItemDetails.jsx
-│ │ └── utils/apis.js
-│ ├── index.css
-│ ├── App.css
-│ └── package.json
-├── LambdaWithLayer/ # shared layer code
-│ └── nodejs/utils.mjs
-├── lambda/ # individual Lambda functions
-│ └── get.js, post.js…
-├── .gitignore
-└── README.md
+![Serverless Architecture](./architecture.png)
 
-yaml
-Copy
-Edit
+- **Frontend:** React SPA (Vite, custom CSS)  
+- **API:** AWS API Gateway (Secured by Cognito JWT authorizer)
+- **Backend:** AWS Lambda Functions (Node.js)  
+- **Shared Layer:** Lambda Layer with DynamoDB helper logic  
+- **Database:** DynamoDB (`MoviesTable`)
+- **Authentication:** Amazon Cognito (OIDC login, JWTs)
+- **Hosting:** S3 (static site) + CloudFront (global CDN, HTTPS) + custom domain
+
+---
+
+## ✨ Features
+
+- User sign-up/sign-in with Cognito (fully managed, secure)
+- Browse, add, edit, and delete **movie** records
+- Responsive gallery UI with modern navigation
+- Secure API endpoints (only logged-in users can use the backend)
+- Serverless, scalable, and pay-as-you-go (AWS Free Tier friendly)
+
+---
+
+## 🛠️ Technologies Used
+
+- [React](https://react.dev/) (frontend SPA)
+- [Vite](https://vitejs.dev/) (build tool)
+- [Amazon Cognito](https://aws.amazon.com/cognito/) (auth)
+- [API Gateway](https://aws.amazon.com/api-gateway/) (REST API)
+- [AWS Lambda](https://aws.amazon.com/lambda/) (backend, Node.js)
+- [Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) (shared DB helpers)
+- [DynamoDB](https://aws.amazon.com/dynamodb/) (NoSQL movie storage)
+- [S3](https://aws.amazon.com/s3/) + [CloudFront](https://aws.amazon.com/cloudfront/) (static hosting, CDN)
+- [Custom Domain](https://www.free-project.online) via 3rd-party registrar
+
+---
+
+## 🗂️ Project Structure
+
+architecture.png
+
 
 ---
 
@@ -45,67 +56,77 @@ Edit
 
 ### 1. Clone & Install
 
-```
-bash
+```bash
 git clone https://github.com/<your-username>/<repo>.git
 cd aws-serverless-app/frontend
 npm install
 ```
+---
+2. Local Development
 
------------------------
+Copy .env.example to .env and set your API endpoint:
 
-### 2.1 Set Up Environment
+```bash
 
-Copy .env.example to .env:
-
-```
-`cp .env.example .env   `
-```
-Then edit .env and add:
-```
-`VITE_API_URL=https://.execute-api..amazonaws.com   `
-```
-### 2.2 Run Dev Server
-```
-`npm run dev   `
-```
-Open your browser at:
+cp .env.example .env
 
 ```
-`   http://localhost:5173   `
-```
-🚀 3. Production Deploy
------------------------
 
-### 3.1 Build the App
+Edit .env:
 
-``` `   frontend  npm run build   ` ```
+ini
+Copy
+Edit
+VITE_API_URL=https://<your-api-id>.execute-api.<region>.amazonaws.com
+Start local dev server:
 
-### 3.2 Upload to S3
+bash
+Copy
+Edit
+npm run dev
+Visit: http://localhost:5173
 
-```
-`  s3 sync dist/ s3:// --delete   `
-```
-Then in CloudFront, create a cache invalidation for:
+3. Production Deploy
+Build & upload the static frontend:
 
-```
-`/*'
-```
+bash
+Copy
+Edit
+cd frontend
+npm run build
+aws s3 sync dist/ s3://<your-s3-bucket> --delete
+Then, in CloudFront, invalidate cache for latest changes:
 
-🌐 4. Access URLs
------------------
+Copy
+Edit
+/*
+Access your site:
 
-*   **Dev:** [http://localhost:5173](http://localhost:5173)
-    
-*   **Prod:** https:// (or your custom domain)
-    
+https://www.free-project.online
 
-🤝 Contributing
----------------
+🌍 API Endpoints
+Route	Method	Description
+/coffee (renamed /movie)	GET	List all movies
+/movie/:id	GET	Get single movie
+/movie	POST	Add new movie
+/movie/:id	PUT	Update movie
+/movie/:id	DELETE	Delete movie
 
-Feel free to open issues or PRs to improve styling, add features, or fix bugs.
+(All routes require Cognito JWT token, handled by the frontend automatically)
+
+🧩 Architecture Summary
+React → CloudFront/S3 → API Gateway (Cognito Auth) → Lambda (w/ Layer) → DynamoDB
+
+All serverless, scalable, and cost-effective.
+
+🙌 Credits & Inspiration
+Based on TrickSumo's AWS CRUD Serverless Tutorial, extended and restyled for a fresh movie catalog use case.
 
 📜 License
-----------
+This project is licensed under the MIT License.
 
-This project is licensed under the `MIT` License.
+yaml
+Copy
+Edit
+
+---
