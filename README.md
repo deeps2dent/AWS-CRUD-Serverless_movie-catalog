@@ -47,7 +47,7 @@ Adapted from the popular AWS Coffee Shop CRUD tutorial, reimagined with a new do
 
 ## 🗂️ Project Structure
 
-architecture.png
+`architecture.png`
 
 
 ---
@@ -61,8 +61,7 @@ git clone https://github.com/<your-username>/<repo>.git
 cd aws-serverless-app/frontend
 npm install
 ```
----
-2. Local Development
+## 2. Local Developement
 
 Copy .env.example to .env and set your API endpoint:
 
@@ -72,61 +71,59 @@ cp .env.example .env
 
 ```
 
-Edit .env:
+Edit `.env:`
 
-ini
-Copy
-Edit
+```ini
+
 VITE_API_URL=https://<your-api-id>.execute-api.<region>.amazonaws.com
+```
 Start local dev server:
 
-bash
-Copy
-Edit
-npm run dev
-Visit: http://localhost:5173
+```bash
 
-3. Production Deploy
+npm run dev
+
+```
+
+## 3. Production Deploy
 Build & upload the static frontend:
 
-bash
-Copy
-Edit
+```bash
 cd frontend
 npm run build
 aws s3 sync dist/ s3://<your-s3-bucket> --delete
+```
 Then, in CloudFront, invalidate cache for latest changes:
 
-Copy
-Edit
+```
 /*
-Access your site:
+```
+
+# Access your site:
 
 https://www.free-project.online
 
 🌍 API Endpoints
-Route	Method	Description
-/coffee (renamed /movie)	GET	List all movies
-/movie/:id	GET	Get single movie
-/movie	POST	Add new movie
-/movie/:id	PUT	Update movie
-/movie/:id	DELETE	Delete movie
+| Route                        | Method | Description      |
+| ---------------------------- | ------ | ---------------- |
+| `/coffee` (renamed `/movie`) | GET    | List all movies  |
+| `/movie/:id`                 | GET    | Get single movie |
+| `/movie`                     | POST   | Add new movie    |
+| `/movie/:id`                 | PUT    | Update movie     |
+| `/movie/:id`                 | DELETE | Delete movie     |
+
 
 (All routes require Cognito JWT token, handled by the frontend automatically)
 
-🧩 Architecture Summary
+### 🧩 Architecture Summary
+```
 React → CloudFront/S3 → API Gateway (Cognito Auth) → Lambda (w/ Layer) → DynamoDB
-
+```
 All serverless, scalable, and cost-effective.
 
-🙌 Credits & Inspiration
+### 🙌 Credits & Inspiration
 Based on TrickSumo's AWS CRUD Serverless Tutorial, extended and restyled for a fresh movie catalog use case.
 
-📜 License
+### 📜 License
 This project is licensed under the MIT License.
 
-yaml
-Copy
-Edit
-
----
