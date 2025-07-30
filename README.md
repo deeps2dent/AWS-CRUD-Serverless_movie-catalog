@@ -61,7 +61,7 @@ git clone https://github.com/<your-username>/<repo>.git
 cd aws-serverless-app/frontend
 npm install
 ```
-## 2. Local Developement
+### 2. Local Developement
 
 Copy .env.example to .env and set your API endpoint:
 
@@ -85,7 +85,7 @@ npm run dev
 
 ```
 
-## 3. Production Deploy
+### 3. Production Deploy
 Build & upload the static frontend:
 
 ```bash
@@ -99,11 +99,11 @@ Then, in CloudFront, invalidate cache for latest changes:
 /*
 ```
 
-# Access your site:
+### Access your site:
 
 https://www.free-project.online
 
-🌍 API Endpoints
+## 🌍 API Endpoints
 | Route                        | Method | Description      |
 | ---------------------------- | ------ | ---------------- |
 | `/coffee` (renamed `/movie`) | GET    | List all movies  |
