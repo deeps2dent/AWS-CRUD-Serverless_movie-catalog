@@ -1,7 +1,7 @@
 # 🎬 Movie Catalog CRUD App — AWS Serverless
 
 A modern, fully serverless Movie Catalog web app where users can securely sign in, browse, add, edit, and delete movie records.  
-Adapted from the popular AWS Coffee Shop CRUD tutorial, reimagined with a new domain, improved styling, and a completely new dataset (movies, not coffee).
+Adapted from the popular AWS Coffee Shop CRUD tutorial, reimagined with a new domain, improved styling, and a completely new dataset.
 
 **🌐 Live Demo:** [https://www.free-project.online](https://www.free-project.online)
 
